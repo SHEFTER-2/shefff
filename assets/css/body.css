@@ -1,4 +1,5 @@
 main .preview{
+    width: 100%;
     height: 88vh;
     background-color: aqua;
     background: 
@@ -220,6 +221,7 @@ main .proyects{
       radial-gradient(farthest-side at 50% -33.33%,#0000 52%,#232323 54% 57%,#0000 59%),
       #353535;
     background-size: calc(128px/4.667) 128px,128px calc(128px/4.667);
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -238,6 +240,30 @@ main .proyects p{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+main .proyects p::after{
+    content: "";
+    position: absolute;
+    width: .5vh;
+    height: 3vh;
+    background-color: #787878;
+    margin-top: 80vh;
+    left: 49.5%;
+    transform: rotate(-45deg);
+    animation: infinite jump-left 1s;
+}
+
+main .proyects p::before{
+    content: "";
+    position: absolute;
+    width: .5vh;
+    height: 3vh;
+    background-color: #787878;
+    margin-top: 80vh;
+    left: 50.5%;
+    transform: rotate(45deg);
+    animation: infinite jump-right 1s;
 }
 
 main .proyects a{
@@ -297,20 +323,101 @@ main .proyects a:hover::before{
     transition: all .8s ease-in-out;
 }
 
-main .blog{
-    margin: 2vh 4% 0 8%;
+main .contact{
+    width: 100%;
+    height: 92vh;
+}
+
+main .contact .tags{
     display: flex;
-    justify-content: space-between;
+    height: 92vh;
+    justify-content: space-around;
+    align-items: center;
 }
 
-main .blog .content{
-    width: 77%;
-    background-color: thistle;
+main .contact .tags .items{
+    width: 50vh;
+    height: 65vh;
+    padding: 0 2vh;
+    border-radius: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #232323;
+    text-align: center;
 }
 
-main .blog .sidebar{
-    width: 22%;
-    height: 100vh;
+main .contact .tags .items i{
+    width: 40vh;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15vh;
+}
+
+main .contact .tags .items p{
+    font-size: 3vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+}
+
+main .contact .tags .items a{
+    width: 18vh;
+    display: flex;
+    justify-content: unset;
+    align-items: center;
+    background-color: #353535;
+    padding: 2vh 4vh;
+    border-radius: 2vh;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 2.75vh;
+    font-weight: 800;
+    color: #787878;
+    transition: all .2s;
+}
+
+main .contact .tags .items a:hover{
+    color: #dedede;
+    width: 25vh;
+    transition: all 1s ease-in-out;
+}
+
+main .contact .tags .items a::before{
+    content: "";
+    position: absolute;
+    opacity: 0;
+    width: .25vh;
+    height: 1.75vh;
+    margin-bottom: -1vh;
+    margin-left: 12vh;
+    transform: rotate(45deg);
+    background-color: #787878;
+    transition: all .1s ease-in-out;
+}
+
+main .contact .tags .items a::after{
+    content: "";
+    position: absolute;
+    opacity: 0;
+    width: .25vh;
+    height: 1.75vh;
+    margin-bottom: 1vh;
+    margin-left: 12vh;
+    transform: rotate(-45deg);
+    background-color: #787878;
+    transition: all .1s ease-in-out;
+}
+
+main .contact .tags .items a:hover::after,
+main .contact .tags .items a:hover::before{
+    background-color: #dedede;
+    margin-left: 16vh;
+    opacity: 1;
+    transition: all .8s ease-in-out;
 }
 
 @keyframes jump-right {
